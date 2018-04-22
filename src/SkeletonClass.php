@@ -1,6 +1,6 @@
 <?php
 
-namespace Mcones\LaravelBaseHelpers;
+namespace mcones\LaravelBaseHelpers;
 
 class SkeletonClass
 {

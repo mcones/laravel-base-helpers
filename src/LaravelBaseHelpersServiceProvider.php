@@ -1,8 +1,10 @@
 <?php
 
-namespace Mcones\LaravelBaseHelpers;
+namespace mcones\LaravelBaseHelpers;
+
 
 use Illuminate\Support\ServiceProvider;
+use Mcones\LaravelBaseHelpers\Commands\GenerateServiceCommand;
 
 class LaravelBaseHelpersServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,11 @@ class LaravelBaseHelpersServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                GenerateServiceCommand::class,
+            ]);
+        }
     }
 
     /**
