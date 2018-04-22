@@ -1,0 +1,55 @@
+{
+    "name": "Mcones/LaravelBaseHelpers",
+    "type": "library",
+    "description": "",
+    "keywords": [
+        "Mcones",
+        "LaravelBaseHelpers"
+    ],
+    "homepage": "https://github.com/Mcones/LaravelBaseHelpers",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Manuel A. Cones B.",
+            "email": "manuelcones@gmail.com",
+            "homepage": "https://github.com/mcones",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : "~5.6|~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=5.4.3",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mcones\\LaravelBaseHelpers\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mcones\\LaravelBaseHelpers\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mcones\\LaravelBaseHelpers\\LaravelBaseHelpersServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
